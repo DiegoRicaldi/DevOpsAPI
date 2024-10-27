@@ -25,7 +25,7 @@ jobs:
     
 
   deploy-to-render:
-        needs: build-and-push 
+        needs: build-and-deploy
         runs-on: ubuntu-latest
         steps:
           - name: Deploy to Render

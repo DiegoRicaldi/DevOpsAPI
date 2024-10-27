@@ -13,7 +13,7 @@ jobs:
 
     - name: Install Dependencies
       run: npm ci
-      
+
     - name: Build Docker image
       run: docker build -t diegom648/devops .
 
@@ -27,14 +27,22 @@ jobs:
       run: docker push diegom648/devops
     
 
-  deploy-to-render:
-        needs: build-and-deploy
-        runs-on: ubuntu-latest
-        steps:
-          - name: Deploy to Render
-            uses: render/deploy-action@v1
-            with:
-              apiKey: ${{ secrets.RENDER_API_KEY }}
-              serviceId: <srv-csf5219u0jms73fdb420>
-              clearCache: true
+    deploy-to-render:
+    needs: build-and-deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to Render
+        env:
+          RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }} 
+          SERVICE_ID: ${{ secrets.SERVICE_ID }}  
+        run: |
+          echo "Deploying to Render..."
+          curl -X POST \
+            -H "Authorization: Bearer $RENDER_API_KEY" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "serviceId": "'"${srv-csf5219u0jms73fdb420}"'",
+              "clearCache": true
+            }' \
+            https://api.render.com/v1/services/${srv-csf5219u0jms73fdb420}/deploys
     

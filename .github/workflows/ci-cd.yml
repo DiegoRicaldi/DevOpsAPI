@@ -42,17 +42,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to Render
-        env:
-          RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }} 
-          SERVICE_ID: ${{ secrets.SERVICE_ID }}  
         run: |
           echo "Deploying to Render..."
           curl -X POST \
-            -H "Authorization: Bearer $RENDER_API_KEY" \
+            -H "Authorization: Bearer ${{ secrets.RENDER_API_KEY }}" \
             -H "Content-Type: application/json" \
             -d '{
-              "serviceId": "'"${srv-csf5219u0jms73fdb420}"'",
+              "serviceId": "'"${{ secrets.SERVICE_ID }}"'",
               "clearCache": true
             }' \
-            https://api.render.com/v1/services/${srv-csf5219u0jms73fdb420}/deploys
-    
+            https://api.render.com/v1/services/${{ secrets.SERVICE_ID }}/deploys

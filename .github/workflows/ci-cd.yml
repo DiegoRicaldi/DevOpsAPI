@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4 # Clonaa el repositorio
+    - uses: actions/checkout@v4 
 
     - name: Install Dependencies
       run: npm ci
@@ -26,7 +26,7 @@ jobs:
     - name: Push Docker image to Docker Hub
       run: docker push diegom648/devops
     
-
+  #render 
     deploy-to-render:
     needs: build-and-deploy
     runs-on: ubuntu-latest

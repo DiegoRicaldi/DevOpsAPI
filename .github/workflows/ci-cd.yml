@@ -22,3 +22,10 @@ jobs:
 
     - name: Push Docker image to Docker Hub
       run: docker push diegom648/devops
+
+    - name: Deploy to Render
+      uses: render-oss/deploy-action@v1
+      with:
+        apiKey: ${{ secrets.RENDER_API_KEY }}
+        serviceId: <srv-csf5219u0jms73fdb420> 
+        clearCache: true

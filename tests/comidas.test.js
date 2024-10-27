@@ -1,3 +1,4 @@
+process.env.NEW_RELIC_NO_CONFIG_FILE = 'true'; 
 const request = require('supertest');
 const app = require('../index'); // Asegúrate de que la ruta a tu archivo `index.js` sea correcta
 

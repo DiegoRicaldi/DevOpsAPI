@@ -1,6 +1,7 @@
 
 FROM node:18-alpine
 
+RUN npm install newrelic --save
 
 WORKDIR /app
 
@@ -17,4 +18,4 @@ COPY . .
 EXPOSE 3000
 
 
-CMD ["npm", "start"]
+CMD ["node", "-r", "newrelic", "index.js"]

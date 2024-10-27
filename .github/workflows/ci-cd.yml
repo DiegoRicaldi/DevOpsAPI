@@ -27,7 +27,7 @@ jobs:
       run: docker push diegom648/devops
     
   #render 
-    deploy-to-render:
+  deploy-to-render:
     needs: build-and-deploy
     runs-on: ubuntu-latest
     steps:

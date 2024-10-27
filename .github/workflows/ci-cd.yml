@@ -11,6 +11,9 @@ jobs:
     steps:
     - uses: actions/checkout@v4 # Clonaa el repositorio
 
+    - name: Install Dependencies
+      run: npm ci
+      
     - name: Build Docker image
       run: docker build -t diegom648/devops .
 

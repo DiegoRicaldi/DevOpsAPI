@@ -208,4 +208,8 @@ app.get('/api/pedidos/distrito/:distrito', (req, res) => {
 
 
     const port = process.env.port || 3000;
-app.listen(port, ()=> console.log(`Escuchando en el puerto ${port}... `));
+    if (require.main === module) {
+        app.listen(port, () => console.log(`Escuchando en el puerto ${port}...`));
+    }
+    
+    module.exports = app; 

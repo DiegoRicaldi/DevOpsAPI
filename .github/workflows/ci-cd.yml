@@ -29,7 +29,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
           - name: Deploy to Render
-            uses: render-oss/deploy-action@v1
+            uses: render/deploy-action@v1
             with:
               apiKey: ${{ secrets.RENDER_API_KEY }}
               serviceId: <srv-csf5219u0jms73fdb420>

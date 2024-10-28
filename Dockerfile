@@ -1,8 +1,6 @@
 
 FROM node:18-alpine
 
-RUN npm install newrelic --save
-
 WORKDIR /app
 
 
@@ -15,7 +13,11 @@ RUN npm ci
 COPY . .
 
 
-EXPOSE 3000
+ENV NEW_RELIC_NO_CONFIG_FILE=true
+ENV NEW_RELIC_APP_NAME="devops"
+ENV NEW_RELIC_LICENSE_KEY="6786124f81127b18d3590b41755b4233FFFFNRAL"
 
+
+EXPOSE 3000
 
 CMD ["node", "-r", "newrelic", "index.js"]

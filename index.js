@@ -2,6 +2,7 @@
 require('newrelic');
 
 const express = require('express');
+const path = require('path');
 const app = express();
 
 app.use(express.json());
@@ -38,9 +39,13 @@ const pedidos = [
 ]
 
 
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/',(req,res)=>{
-    res.send('Pagina inicio restaurante WINGZ');
+    res.send(`
+        <h1>Página de inicio restaurante WINGZ</h1>
+        <img src="/images/burger.png" alt="Burger" style="max-width: 100%; height: auto;">
+    `);
 
 });
 //COMIDAS

@@ -1,5 +1,5 @@
 process.env.NEW_RELIC_NO_CONFIG_FILE = 'true'; 
-//evitar a new relic
+//evitar a new relicc
 const request = require('supertest');
 const app = require('../index'); 
 

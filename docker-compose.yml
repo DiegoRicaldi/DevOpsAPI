@@ -6,7 +6,8 @@ services:
     ports:
       - '3000:3000'  
     environment:
-      NODE_ENV: development  
+      - NODE_ENV=development
+      - NEW_RELIC_LICENSE_KEY=${NEW_RELIC_LICENSE_KEY} 
     volumes:
       - .:/app  
     command: npm start  

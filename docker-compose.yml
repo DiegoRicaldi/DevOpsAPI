@@ -1,14 +1,16 @@
-version: '3.8' 
+version: '3.8'
 
 services:
   app:
-    build: .  
+    build: .
     ports:
-      - '3000:3000'  
+      - '3000:3000'
     environment:
-      - NODE_ENV=development
+      NODE_ENV: development
+      NEW_RELIC_NO_CONFIG_FILE: "true"
+      NEW_RELIC_APP_NAME: "devops"
+      NEW_RELIC_LICENSE_KEY: "${NEW_RELIC_LICENSE_KEY}" 
+      NEW_RELIC_LOG_LEVEL: "info"
     volumes:
-      - .:/app  
-    command: npm start  
-
- 
+      - .:/app
+    command: npm start

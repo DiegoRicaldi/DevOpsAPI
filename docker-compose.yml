@@ -8,7 +8,7 @@ services:
     environment:
       NODE_ENV: development
       NEW_RELIC_NO_CONFIG_FILE: "true"
-      NEW_RELIC_APP_NAME: "devops11"
+      NEW_RELIC_APP_NAME: "devops-monitoreo"
       NEW_RELIC_LICENSE_KEY: "${NEW_RELIC_LICENSE_KEY}" 
       NEW_RELIC_LOG_LEVEL: "info"
     volumes:

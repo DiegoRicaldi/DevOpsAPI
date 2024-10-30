@@ -45,8 +45,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to Render
-        env:
-          NEW_RELIC_LICENSE_KEY: ${{ secrets.NEW_RELIC_LICENSE_KEY }}
         run: |
           echo "Deploying to Render..."
           curl -X POST \

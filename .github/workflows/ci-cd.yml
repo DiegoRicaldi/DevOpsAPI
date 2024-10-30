@@ -30,7 +30,7 @@ jobs:
           
       - name: Build Docker image
         run: docker-compose build  
-       env:
+        env:
         NEW_RELIC_LICENSE_KEY: ${{ secrets.NEW_RELIC_LICENSE_KEY }}
       
       - name: Log in to Docker Hub

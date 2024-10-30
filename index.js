@@ -21,7 +21,7 @@ app.use(express.json());
 const comidas = [
     {idcomida: 1, nombre: 'alitas', costo: 1000},
     {idcomida: 2, nombre: 'pizza', costo: 4000},
-    {idcomida: 3, nombre: 'hamburguesa', costo: 2050}
+    {idcomida: 3, nombre: 'hamburguesa', costo: 2000}
 ];
 
 const usuarios = [

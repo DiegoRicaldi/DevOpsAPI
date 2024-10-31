@@ -8,8 +8,7 @@ services:
     env_file:
       - .gitignore/.env 
     environment:
-      NODE_ENV: development
-      NEW_RELIC_NO_CONFIG_FILE: "true"
+      NODE_ENV: production
       NEW_RELIC_APP_NAME: "devops-monitoreo"
       NEW_RELIC_LOG_LEVEL: "info"
     volumes:

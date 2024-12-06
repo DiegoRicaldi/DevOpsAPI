@@ -19,7 +19,7 @@ app.use(express.json());
 
 //base de datos de prueba local 
 const comidas = [
-    {idcomida: 1, nombre: 'alitas', costo: 1000},
+    {idcomida: 1, nombre: 'alitas', costo: 1009},
     {idcomida: 2, nombre: 'pizza', costo: 4000},
     {idcomida: 3, nombre: 'hamburguesa', costo: 2000}
 ];
